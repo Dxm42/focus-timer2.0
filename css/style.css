@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: white;
+    --btn-nature: #E1E1E6;
+    --btn-nature-black: #323238;
+    --btn-nature-active: #02799D;
+    
+
+    font-size: 62.5%;
+}
+
+body {
+    background: var(--bg-color);
+    display: grid;
+    min-height: 100vh;
+     font-size: 12.6rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {     
+    align-self: end;
+    justify-content: center;     
+    margin: auto;
+    display: flex;
+    gap: 5rem;
+    flex-wrap: wrap;
+    
+}
+
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.timer {
+    display: flex;
+}
+
+
+.buttons-nature {   
+    gap: 4rem;
+    display: grid;
+    grid-template-columns: 15rem 15rem;   
+    
+}
+
+.bg-nature {
+    border-radius: 2.4rem;
+
+    background-color: var(--btn-nature);
+
+    width: 13rem;
+    height: 15rem;
+
+    display: flex;
+    justify-content: center;    
+}
+
+.bg-nature:hover{
+    background-color: var(--btn-nature-active);
+}
+.bg-nature:nth-child(2){    
+        background-color: var(--btn-nature-active);   
+    
+}
