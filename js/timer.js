@@ -16,7 +16,8 @@ export function Timer({
         }
         secondsDisplay.textContent = String(seconds -1).padStart(2, "00")
         
-        if(minutes <= 0){   
+        if((minutes && seconds) <= 0){ 
+            updateDisplay()             
             return
         }
     
@@ -25,13 +26,16 @@ export function Timer({
         
     }
 
-    function stopDisplay(){
+    function updateDisplay(){
         minutesDisplay.textContent = "25"
         secondsDisplay.textContent = "00"
         
         clearTimeout(timerTimeOut)
     }
 
+    function stopDisplay(){        
+        clearTimeout(timerTimeOut)        
+    }
     return {
         countdown,
         stopDisplay

@@ -66,7 +66,7 @@ button{
 }
 
 .bg-nature:hover{
-    background-color: var(--btn-nature-active);
+    background-color: var(--btn-nature-active);    
 }
 .bg-nature:nth-child(2){    
         background-color: var(--btn-nature-active);   

@@ -1,23 +1,14 @@
 import { Timer } from "./timer.js"
 import { Controls } from "./controls.js"
-
-let buttonPlay = document.querySelector('.btn-play')
-let buttonStop = document.querySelector('.btn-stop')
-let buttonAdd = document.querySelector('.btn-add')
-let buttonDecrease = document.querySelector('.btn-decrease')
+import { buttonPlay, buttonAdd, buttonStop, buttonDecrease, buttonRain, buttonFire, buttonHouse, btnTree} from "./elements.js"
+import { Sounds } from "./sounds.js"
 
 let secondsDisplay = document.querySelector('.seconds')
 let minutesDisplay = document.querySelector('.minutes')
 let timerTimeOut
 
-let buttonRain = document.querySelector('.btn-rain')
-let buttonHouse = document.querySelector('.btn-house')
-let buttonFire = document.querySelector('.btn-fire')
-
 const controls = Controls({
-    minutesDisplay,
-    secondsDisplay,
-    timerTimeOut
+    minutesDisplay
 })
 
 const timer = Timer({
@@ -25,6 +16,9 @@ const timer = Timer({
     minutesDisplay,
     timerTimeOut
 })
+
+const sounds = Sounds()
+
 buttonAdd.addEventListener('click', () => {
  controls.addMinutes()
 
@@ -41,4 +35,18 @@ buttonPlay.addEventListener('click', () => {
 buttonStop.addEventListener('click', () => {  
 
   timer.stopDisplay()
+})
+
+buttonRain.addEventListener('click',() => {
+ sounds.pressRain()  
+})
+
+buttonHouse.addEventListener('click',() => {
+  sounds.pressCoffeeMachine()
+})
+buttonFire.addEventListener('click',() => {
+  sounds.pressFirePlace()
+})
+btnTree.addEventListener('click',() => {
+  sounds.pressForest()
 })
